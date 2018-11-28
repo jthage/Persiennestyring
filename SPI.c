@@ -109,8 +109,8 @@ uint8_t SPI_send(int wrn, uint8_t Address, uint8_t Data )
 		SPI_transmit(Data);
 
 		//delay, so the data can be transmittet before SS goes low
-		for(int i = 0; i < 30; i++)
-			;
+		while(!(SPI1->S & SPI_S_SPTEF_MASK))
+				;
 
 		//pulls SS pin high
 		SS_T();
