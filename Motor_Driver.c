@@ -41,7 +41,7 @@
 #include "fsl_debug_console.h"
 
 #define PWM_PERIOD (48000)
-#define MORTOR_POS (18)
+#define MORTOR_POS (1)
 
 void Init_Motor_PWM(uint16_t period) {
 	//enable clock to PORTD, TM0
