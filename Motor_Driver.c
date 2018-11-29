@@ -41,7 +41,7 @@
 #include "fsl_debug_console.h"
 
 #define PWM_PERIOD (48000)
-#define MORTOR_POS (1)
+#define MOTOR_POS (1)
 
 void Init_Motor_PWM(uint16_t period) {
 	//enable clock to PORTD, TM0
@@ -51,8 +51,8 @@ void Init_Motor_PWM(uint16_t period) {
 	// set pin to FTM
 	// Blue FTMO_CH1, MUX Alt 4
 
-	PORTD->PCR[MORTOR_POS] &= ~PORT_PCR_MUX_MASK;
-	PORTD->PCR[MORTOR_POS] |= PORT_PCR_MUX(4);
+	PORTD->PCR[MOTOR_POS] &= ~PORT_PCR_MUX_MASK;
+	PORTD->PCR[MOTOR_POS] |= PORT_PCR_MUX(4);
 
 	// configure TPM
 	// set clock source for tpm: 48 MHz
